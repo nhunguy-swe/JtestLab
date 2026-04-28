@@ -1,24 +1,37 @@
-# Lab 1.1: Unit Testing and Bug Fixing
+# LAB 1.1: UNIT TESTING & BUG FIXING
 
-## 1. Project Overview
-This project is part of the Software Testing course. The primary goal is to apply **Unit Testing** and **Test-Driven Development (TDD)** principles to identify and resolve logic bugs in a simulated banking and geometry system.
+## I. STUDENT INFO
+* **Name:** NguyThiTamNhu
+* **ID:** 4251050165
+* **Course:** Software Testing
 
-## 2. Learning Objectives
-* Implementing Test Suites using **JUnit 5**.
-* Applying **White-box testing** to achieve high path coverage.
-* Practicing **Bug Spotting** and **Refactoring** based on test failures.
-* Managing source code professionally with **Git**.
+---
 
-## 3. Key Components
-* **Part A (Introductory):** Debugging Fibonacci sequences and Geometry (Points, Lines, Vectors).
-* **Part B (Banking System):** Implementing and testing `Money`, `Currency`, `Account`, and `Bank` classes.
-* **Exception Handling:** Ensuring robust logic for non-existent accounts and invalid transfers.
+## II. OBJECTIVES
+* Implement unit tests using **JUnit 5**.
+* Apply **Test-Driven Development (TDD)** and **White-box testing**.
+* Identify, document, and fix logic bugs in a Banking System.
 
-## 4. How to Run Tests
-1.  Open the project in **IntelliJ IDEA**.
-2.  Navigate to the `test/` folder.
-3.  Right-click on a test class (e.g., `BankTest_new.java`) and select **Run**.
-4.  Ensure the **Green Bar** is achieved for all test cases.
+---
 
-## 5. Bug Analysis Analysis (Lab Requirement)
-As per the instructions, bugs found during the testing phase are documented directly in the source code using comments (`// BUG FOUND`). These comments explain the nature of the bug and the corresponding fix.
+## III. PROJECT STRUCTURE
+* **`a_Introductory`**: Fixed bugs in Fibonacci and Geometry classes.
+* **`b_Money`**: 
+    * Resolved rounding issues in `Currency`.
+    * Implemented `Money` logic and developed `Bank/Account` test suites.
+    * Added `// BUG FOUND` comments to mark identified errors in source code.
+
+---
+
+## IV. WORKFLOW (Checklist)
+- [x] Drafted tests for `Money` & `Currency` with motivations.
+- [x] Implemented source code to achieve **Green Bar**.
+- [x] Identified bugs in `Bank` & `Account` via JUnit failures.
+- [x] Refactored code and verified final stability.
+
+---
+
+## V. HOW TO RUN
+1. Open project in **IntelliJ IDEA**.
+2. Run all tests in the `test/` folder.
+3. **Expected Result:** 100% Passed (Green Bar).
