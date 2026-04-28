@@ -43,7 +43,8 @@ public class Bank {
 			throw new AccountExistsException();
 		}
 		else {
-			accountlist.get(accountid);
+//			accountlist.get(accountid);
+			accountlist.put(accountid, new Account(accountid, currency));
 		}
 	}
 	
@@ -54,13 +55,11 @@ public class Bank {
 	 * @throws AccountDoesNotExistException If the account does not exist
 	 */
 	public void deposit(String accountid, Money money) throws AccountDoesNotExistException {
-		if (accountlist.containsKey(accountid)) {
+		if (!accountlist.containsKey(accountid)) {
 			throw new AccountDoesNotExistException();
 		}
-		else {
-			Account account = accountlist.get(accountid);
-			account.deposit(money);
-		}
+		Account account = accountlist.get(accountid);
+		account.deposit(money);
 	}
 	
 	/**
@@ -75,7 +74,8 @@ public class Bank {
 		}
 		else {
 			Account account = accountlist.get(accountid);
-			account.deposit(money);
+//			account.deposit(money);
+			account.withdraw(money);
 		}
 	}
 	
@@ -103,13 +103,20 @@ public class Bank {
 	 * @throws AccountDoesNotExistException If one of the accounts do not exist
 	 */
 	public void transfer(String fromaccount, Bank tobank, String toaccount, Money amount) throws AccountDoesNotExistException {
-		if (!accountlist.containsKey(fromaccount) || !tobank.accountlist.containsKey(toaccount)) {
+//		if (!accountlist.containsKey(fromaccount) || !tobank.accountlist.containsKey(toaccount)) {
+//			throw new AccountDoesNotExistException();
+//		}
+//		else {
+//			accountlist.get(fromaccount).withdraw(amount);
+//			tobank.accountlist.get(toaccount).deposit(amount);
+//		}
+		if (!accountlist.containsKey(fromaccount)) {
 			throw new AccountDoesNotExistException();
 		}
 		else {
 			accountlist.get(fromaccount).withdraw(amount);
-			tobank.accountlist.get(toaccount).deposit(amount);
-		}		
+			tobank.deposit(toaccount, amount);
+		}
 	}
 
 	/**
@@ -120,7 +127,14 @@ public class Bank {
 	 * @throws AccountDoesNotExistException If one of the accounts do not exist
 	 */
 	public void transfer(String fromaccount, String toaccount, Money amount) throws AccountDoesNotExistException {
-		transfer(fromaccount, this, fromaccount, amount);
+//		transfer(fromaccount, this, fromaccount, amount);
+		if (!accountlist.containsKey(fromaccount) || !accountlist.containsKey(toaccount)) {
+			throw new AccountDoesNotExistException();
+		}
+		else {
+			accountlist.get(fromaccount).withdraw(amount);
+			accountlist.get(toaccount).deposit(amount);
+		}
 	}
 
 	/**

@@ -3,10 +3,12 @@ package b_Money;
 import java.util.Hashtable;
 
 public class Account {
+	private String name;
 	private Money content;
 	private Hashtable<String, TimedPayment> timedpayments = new Hashtable<String, TimedPayment>();
 
 	Account(String name, Currency currency) {
+		this.name = name;
 		this.content = new Money(0, currency);
 	}
 
@@ -54,7 +56,8 @@ public class Account {
 	 * @param money Money to deposit.
 	 */
 	public void deposit(Money money) {
-		content = content.add(money);
+//		content = content.add(money);
+		this.content = this.content.add(money);
 	}
 	
 	/**
@@ -112,5 +115,4 @@ public class Account {
 			}
 		}
 	}
-
 }
