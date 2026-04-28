@@ -20,5 +20,4 @@ public class FibonacciTest {
 		assertEquals("6", 8, tester.fib(6));
 		assertEquals("7", 13, tester.fib(7));
 	}
-
 }
