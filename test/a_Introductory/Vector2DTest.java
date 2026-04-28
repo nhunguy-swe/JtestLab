@@ -21,7 +21,7 @@ public class Vector2DTest {
 		assertEquals("v1 and v3 are orthogonal. The dot product should be zero.", 0, v1.dotProduct(v3));
 		assertEquals("The dot product of v1 and v2 should be (-2 * 1) + (4 * 2) = 6", 6, v1.dotProduct(v2));
 	}
-	
+
 	@Test
 	public void testOrthogonality() {
 		assertFalse("v1 should not be orthogonal to v2", v1.isOrthogonalTo(v2));

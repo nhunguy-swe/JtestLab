@@ -28,5 +28,4 @@ public class LineTest {
 		assertEquals(10.0498756, l2.getLength(), 0.0001);
 		assertTrue("l1 should have same length as l2", l1.isSameLengthAs(l2));
 	}
-
 }
