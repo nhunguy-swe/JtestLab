@@ -54,9 +54,6 @@ public class MoneyTest_new {
     @Test
     public void testEqualsMoney() {
         // Kiểm tra bằng nhau dù khác loại tiền (dựa trên universal value)
-        // Lưu ý: Trong lớp Money bạn gửi, equals đang so sánh trực tiếp 'amount == other.amount'
-        // Đây có thể là một BUG vì 100 SEK (10000) không nên bằng 100 EUR (10000).
-        // Nếu test fail, bạn hãy kiểm tra lại logic equals trong Money.java
         assertTrue("SEK100 nên có giá trị tương đương EUR10", SEK100.universalValue().equals(EUR10.universalValue()));
     }
 

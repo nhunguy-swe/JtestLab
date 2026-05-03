@@ -72,10 +72,9 @@ public class CurrencyTest_new {
 
         /*
          * Đổi 1000 SEK sang EUR:
-         * 1000 * (0.15 / 1.5) trong máy tính có thể ra 99.99999999999999
-         * Ép kiểu (int) sẽ làm mất phần thập phân và còn 99.
+         * 1000 * (0.15 / 1.5) trong máy tính có thể ra 99.999999... -> ép kiểu (int) còn 99
          */
-        Integer expectedSEKtoEUR = 99; // Thay đổi từ 100 thành 99 để khớp với lỗi làm tròn của (int)
+        Integer expectedSEKtoEUR = 99;
         assertEquals("Chuyển đổi từ SEK sang EUR không chính xác", expectedSEKtoEUR, EUR.valueInThisCurrency(1000, SEK));
     }
 }

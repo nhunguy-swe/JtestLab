@@ -18,7 +18,7 @@ public class FibonacciTest_new {
 
         for (int n = 0; n < expectedResults.length; n++) {
             // assertEquals(message, expected, actual)
-            // Thông báo lỗi sẽ giúp xác định n nào gây ra lỗi [cite: 60, 80]
+            // Thông báo lỗi sẽ giúp xác định n nào gây ra lỗi
             assertEquals("Failed to generate Fibonacci number at n = " + n,
                     expectedResults[n],
                     fibonacci.fib(n));

@@ -33,17 +33,17 @@ public class QuadrilateralTest_new {
 
     @Test
     public void testIsRectangle() {
-        // Hình vuông và hình chữ nhật đều phải trả về true [cite: 96, 98]
+        // Hình vuông và hình chữ nhật đều phải trả về true
         assertTrue("Hình vuông nên được nhận diện là hình chữ nhật", square.isRectangle());
         assertTrue("Hình chữ nhật nên được nhận diện đúng", rectangle.isRectangle());
 
-        // Tứ giác ngẫu nhiên phải trả về false [cite: 51]
+        // Tứ giác ngẫu nhiên phải trả về false
         assertFalse("Tứ giác thường không được là hình chữ nhật", randomQuad.isRectangle());
     }
 
     @Test
     public void testIsSquare() {
-        // Chỉ có hình vuông mới trả về true [cite: 96, 99]
+        // Chỉ có hình vuông mới trả về true
         assertTrue("Hình vuông nên được nhận diện đúng", square.isSquare());
 
         // Hình chữ nhật (cạnh không bằng nhau) phải trả về false
